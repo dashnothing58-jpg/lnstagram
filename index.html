@@ -432,6 +432,10 @@ body {
         </a>
 
     </form>
+    
+    <button class="back" type="button" onclick="goBack()">
+    ‹
+    </button>
 
     <button class="create" onclick="createAccount()">
       Create new account
@@ -466,13 +470,8 @@ window.onload = () => {
    ========================================= */
 
 function goBack() {
-    if (window.opener) {
-        window.close();
-    } else if (window.history.length > 1) {
-        window.history.back();
-    }
+    window.close();
 }
-
 
 /* =========================================
    FORM VALIDATION
