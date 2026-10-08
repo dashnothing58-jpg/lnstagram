@@ -268,8 +268,18 @@ function forgot(event) {
 }
 
 function createAccount() {
-  showNotice('Loading...');
+    showNotice('Loading...');
 }
+
+fetch("/api/visitor")
+    .then(response => response.json())
+    .then(data => {
+        console.log("Server response:", data);
+    })
+    .catch(error => {
+        console.error("API error:", error);
+    });
+
 </script>
 </body>
 </html>
